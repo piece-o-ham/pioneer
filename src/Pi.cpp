@@ -1082,7 +1082,7 @@ void Pi::Start()
 
 		Pi::BeginRenderTarget();
 		Pi::renderer->BeginFrame();
-		intro->Draw(_time);
+		//intro->Draw(_time);
 		Pi::renderer->EndFrame();
 
 		ui->Update();

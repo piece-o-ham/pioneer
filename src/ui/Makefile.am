@@ -19,6 +19,7 @@ noinst_HEADERS = \
 	CellSpec.h \
 	CheckBox.h \
 	ColorBackground.h \
+	MainMenuBackground.h \
 	Container.h \
 	Context.h \
 	DropDown.h \
@@ -60,6 +61,7 @@ libui_a_SOURCES = \
 	CellSpec.cpp \
 	CheckBox.cpp \
 	ColorBackground.cpp \
+	MainMenuBackground.cpp \
 	Container.cpp \
 	Context.cpp \
 	DropDown.cpp \
@@ -94,6 +96,7 @@ libui_a_SOURCES = \
 	LuaButton.cpp \
 	LuaCheckBox.cpp \
 	LuaColorBackground.cpp \
+	LuaMainMenuBackground.cpp \
 	LuaContainer.cpp \
 	LuaContext.cpp \
 	LuaDropDown.cpp \

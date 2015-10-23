@@ -16,6 +16,7 @@ void Init()
 	LuaObject<UI::Button>::RegisterClass();
 	LuaObject<UI::CheckBox>::RegisterClass();
 	LuaObject<UI::ColorBackground>::RegisterClass();
+	LuaObject<UI::MainMenuBackground>::RegisterClass();
 	LuaObject<UI::Container>::RegisterClass();
 	LuaObject<UI::Context>::RegisterClass();
 	LuaObject<UI::DropDown>::RegisterClass();

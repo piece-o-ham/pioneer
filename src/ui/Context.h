@@ -18,6 +18,7 @@
 #include "Align.h"
 #include "Background.h"
 #include "ColorBackground.h"
+#include "MainMenuBackground.h"
 #include "Gradient.h"
 #include "Expand.h"
 #include "Box.h"
@@ -81,6 +82,7 @@ public:
 	// single containers
 	UI::Background *Background() { return new UI::Background(this); }
 	UI::ColorBackground *ColorBackground(const Color &color) { return new UI::ColorBackground(this, color); }
+	UI::MainMenuBackground *MainMenuBackground() { return new UI::MainMenuBackground(this); }
 	UI::Margin *Margin(int margin, Margin::Direction direction = Margin::ALL) { return new UI::Margin(this, margin, direction); };
 	UI::Align *Align(UI::Align::Direction direction) { return new UI::Align(this, direction); }
 	UI::Gradient *Gradient(const Color &beginColor, const Color &endColor, Gradient::Direction direction = Gradient::VERTICAL) { return new UI::Gradient(this, beginColor, endColor, direction); }

@@ -130,6 +130,14 @@ public:
 		return 1;
 	}
 
+	static int l_mainmenubackground(lua_State *l) {
+		UI::Context *c = LuaObject<UI::Context>::CheckFromLua(1);
+		UI::MainMenuBackground *mmb = c->MainMenuBackground();
+		_implicit_set_inner_widget(l, mmb, 2);
+		LuaObject<UI::MainMenuBackground>::PushToLua(mmb);
+		return 1;
+	}
+
 	static int l_gradient(lua_State *l) {
 		UI::Context *c = LuaObject<UI::Context>::CheckFromLua(1);
 		Color beginColor = Color::FromLuaTable(l, 2);
