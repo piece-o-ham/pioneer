@@ -402,6 +402,8 @@ template <> void LuaObject<UI::Context>::RegisterClass()
 		{ "Table",           LuaContext::l_table           },
 		{ "Background",      LuaContext::l_background      },
 		{ "ColorBackground", LuaContext::l_colorbackground },
+		{ "MainMenuBackground",
+			LuaContext::l_mainmenubackground },
 		{ "Gradient",        LuaContext::l_gradient        },
 		{ "Expand",          LuaContext::l_expand          },
 		{ "Margin",          LuaContext::l_margin          },
