@@ -20,7 +20,8 @@
 namespace UI {
 
 MainMenuBackground::MainMenuBackground(Context *context, int width, int height) :
-	Single(context), m_initzd(false), m_last_time(SDL_GetTicks()), m_renderer(context->GetRenderer())
+	Single(context), m_initzd(false), m_last_time(SDL_GetTicks()), m_renderer(context->GetRenderer()),
+	m_stationModel(nullptr)
 {
 	m_aspectRatio = static_cast<float>(width) / static_cast<float>(height);
 	m_ambientColor = Color(0);
@@ -28,7 +29,11 @@ MainMenuBackground::MainMenuBackground(Context *context, int width, int height) 
 	m_background.reset(new ::Background::Container(m_renderer, Pi::rng));
 }
 
-// XXX XXX XXX XXX XXX XXX MEMORY LEAK NO DESTRUCTOR XXX XXX XXX XXX XXX XXX
+MainMenuBackground::~MainMenuBackground()
+{
+	delete m_stationModel;
+	m_stationModel = nullptr;
+}
 
 // We need to initialize later because the models won't be ready when the constructor
 // is called.
@@ -49,7 +54,7 @@ void MainMenuBackground::Draw()
 	{
 		// Something feels weird about using SDL here, but this is not
 		// a major game component. It is only used in one place.
-		// Remove if you disagree, fix it if you agree.
+		// Remove comment if you disagree, fix it if you agree.
 		m_time += 0.001f*(SDL_GetTicks() - m_last_time);
 		m_last_time = SDL_GetTicks();
 
@@ -63,7 +68,6 @@ void MainMenuBackground::Draw()
 		//m_renderer->SetLights(m_lights.size(), &m_lights[0]);
 
 		// XXX all this stuff will *supposedly* be gone when intro uses a Camera
-		// rotate background by time, and a bit extra Z so it's not so flat
 		m_renderer->ClearDepthBuffer();
 		m_background->Draw(btrans);
 

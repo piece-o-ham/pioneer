@@ -13,6 +13,7 @@ namespace UI {
 
 class MainMenuBackground : public Single {
 public:
+	~MainMenuBackground();
 	virtual void Draw();
 	void InitBackground();
 
